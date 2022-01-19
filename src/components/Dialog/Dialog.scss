@@ -1,0 +1,60 @@
+@import "./src/assets/colors.scss";
+@import "./src/assets/functions";
+
+div.dialog,
+dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-width: 0;
+  width: 100vw;
+  height: 100vh;
+
+  > div:first-child {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    opacity: .5;
+  }
+
+  > div:last-child {
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $shadow;
+    padding: base(3) base(4);
+    border-radius: base(2);
+
+
+    > header {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      padding-bottom: base(4);
+      display: flex;
+      justify-content: center;
+    }
+
+    > div {
+      padding: base(5) base(3);
+    }
+
+    > footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: base(2);
+      border-top-width: 1px;
+      border-top-style: solid;
+      padding-top: base(4);
+    }
+  }
+}

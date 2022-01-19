@@ -1,0 +1,75 @@
+@import "../../assets/functions.scss";
+@import "./src/assets/colors.scss";
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  gap: base(5);
+
+  &-header {
+    display: flex;
+    gap: base(4);
+    align-items: center;
+  }
+}
+
+table.devices {
+  p {
+    padding: base(1) base(2);
+  }
+
+  tbody {
+    display: flex;
+    flex-direction: column;
+    gap: base(3);
+  }
+
+  tr {
+    display: flex;
+    gap: base(3);
+  }
+
+  td {
+    &:first-child {
+      border-width: 1px;
+      border-style: solid;
+      box-shadow: $shadow;
+      border-radius: base(1);
+      flex-grow: 1;
+    }
+
+    &:last-child {
+      display: flex;
+      align-items: center;
+      gap: base(2);
+    }
+  }
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: base(4);
+
+  label {
+    display: flex;
+    justify-content: space-between;
+    gap: base(4);
+  }
+
+  select,
+  input {
+    padding: base(1) base(3);
+    background-color: $black;
+    border: none;
+    box-shadow: inset $shadow;
+    border-radius: base(2);
+    color: $white;
+    font-size: base(4);
+    width: 250px;
+
+    &:focus {
+      outline: 1px solid $dark-yellow;
+    }
+  }
+}

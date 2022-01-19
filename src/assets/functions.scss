@@ -1,0 +1,13 @@
+@function base($n) {
+  @return $n * 4px
+}
+
+@function duration($duration) {
+  @if ($duration == slow) {
+    @return .5s ease-in-out
+  }
+  @else if($duration == fast) {
+    @return .15s ease-in-out
+  }
+  @return .25s ease-in-out
+}

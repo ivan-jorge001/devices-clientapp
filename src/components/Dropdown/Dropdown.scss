@@ -1,0 +1,77 @@
+@import "./src/assets/colors";
+@import "./src/assets/functions";
+
+.dropdown {
+  &.open {
+    > div {
+      display: flex;
+      z-index: 100;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      cursor: pointer;
+      opacity: 0;
+    }
+
+    > ul {
+      visibility: visible;
+    }
+
+    > span > svg {
+      transform: rotateZ(180deg);
+    }
+  }
+
+  > span {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: base(2);
+
+    > svg {
+      transition: transform .25s ease-in-out;
+    }
+  }
+
+  > div {
+    display: none;
+  }
+
+  > ul {
+    margin-top: base(3);
+    z-index: 101;
+    visibility: hidden;
+    position: absolute;
+    background-color: $black;
+    box-shadow: $shadow;
+    border-radius: base(4);
+    padding: base(5) base(4);
+
+    li {
+      border-radius: base(4);
+      list-style: none;
+      cursor: pointer;
+      padding: base(2) base(4);
+
+      &.selected {
+        display: flex;
+        gap: base(2);
+
+        svg {
+          color: $dark-yellow;
+        }
+      }
+
+      &:hover {
+        background-color: $dark-yellow;
+        color: $black;
+
+        svg {
+          color: $black;
+        }
+      }
+    }
+  }
+}
